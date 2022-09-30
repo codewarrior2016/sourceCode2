@@ -1,0 +1,5 @@
+run via
+java com.lcci.Java8
+
+compile via
+javac com/lcci/*.java
