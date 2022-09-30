@@ -30,6 +30,7 @@ public class Java8 {
 		
 		Dish x100 = menu.get(0);
 		System.err.println(x100.toString());
+		System.err.println("checkpoint 1\n");
 		
 		List<Dish> heavyDishes = menu.stream()
 				.filter(d -> d.getCalories() > 300)
@@ -38,9 +39,11 @@ public class Java8 {
 		
 		
 		heavyDishes.stream().forEach(d -> System.out.println(d));
+		System.err.println("checkpoint 2\n");
 		System.out.println(heavyDishes.toString());
+		System.err.println("checkpoint 3\n");
+
 		if (heavyDishes instanceof java.util.LinkedList) { System.err.println("is linked List"); }
-		
 		
 		System.out.println("-----A");
 		Dish greatest = menu.stream()
