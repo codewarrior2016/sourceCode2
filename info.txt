@@ -8,3 +8,9 @@ access token needed to checkin aka push
 push via
 git push origin master
 
+update using maven:
+mvn compile
+mvn package
+
+run then via:
+java -jar target/...
