@@ -3,3 +3,8 @@ java com.lcci.Java8
 
 compile via
 javac com/lcci/*.java
+
+access token needed to checkin aka push 
+push via
+git push origin master
+
