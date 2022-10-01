@@ -18,6 +18,8 @@ public class Java8 {
 	public static void main(String[] strgv) {
 
 		System.err.println("Data from main branch");
+		System.err.println("Data from feature1");
+		System.err.println("");
 
 		List<Dish> menu = Arrays.asList(
 				new Dish("pork", false, 800, Dish.Type.MEAT),
