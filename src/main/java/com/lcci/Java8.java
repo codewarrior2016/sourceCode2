@@ -17,6 +17,8 @@ public class Java8 {
 	
 	public static void main(String[] strgv) {
 
+		System.err.println("Data from main branch");
+
 		List<Dish> menu = Arrays.asList(
 				new Dish("pork", false, 800, Dish.Type.MEAT),
 				new Dish("beef", false, 700, Dish.Type.MEAT),
