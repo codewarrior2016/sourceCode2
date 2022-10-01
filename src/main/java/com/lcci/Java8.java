@@ -19,6 +19,7 @@ public class Java8 {
 
 		System.err.println("Data from main branch");
 		System.err.println("Data from feature1");
+		System.err.println("Data from main2");
 		System.err.println("");
 
 		List<Dish> menu = Arrays.asList(
