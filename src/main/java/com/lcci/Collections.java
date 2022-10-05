@@ -18,6 +18,8 @@ public class Collections {
 
   public static void main(String[] args) {
 
+   SpringApplication.run(Collections.class, args);
+
    System.err.println("Collections testing");
 
    List<String> dataList = new ArrayList<String>();
