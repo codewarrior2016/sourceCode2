@@ -4,6 +4,14 @@ import java.util.*;
 
 import java.util.function.Consumer;
 
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.*;
+//import org.springframework.web.bind.annotation.*;
+
+@SpringBootApplication
 public class Collections {
 
 
