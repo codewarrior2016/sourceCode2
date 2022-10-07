@@ -1,6 +1,11 @@
 package com.lcci;
 
 import org.springframework.stereotype.*;
+import org.springframework.context.annotation.Bean;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class Dish {
@@ -19,6 +24,7 @@ public class Dish {
 		this.type = Type.MEAT;
 	}
 
+
 	public Dish(String name, boolean vegetarian, int calories, Type type) {	
 		this.name = name;
 		this.vegetarian = vegetarian;
@@ -30,6 +36,16 @@ public class Dish {
 	public boolean isVegetarian() { return vegetarian; }
 	public int getCalories() {return calories;}
 	public Type getType() {return type;}
+
+        @Bean
+        public Info genInfo() {
+          return new Info();
+        }
+
+        //@Bean(name = "vegi")
+        //public Dish genVegi() {
+        //  return new Dish("grape", true, 20, Type.OTHER);
+        //}
 	
 	@Override
 	public String toString() {

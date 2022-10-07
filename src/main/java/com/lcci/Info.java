@@ -3,7 +3,14 @@ package com.lcci;
 
 public class Info {
 
-  public void Info() {
+  String  message ;
+
+  public Info() {
+    this.message= "Default message";
+  }
+
+  public String toString() {
+    return "value of message: "+this.message;
   }
 
 }
