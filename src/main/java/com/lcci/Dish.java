@@ -42,16 +42,25 @@ public class Dish {
           return new Info();
         }
 
-        //@Bean(name = "vegi")
-        //public Dish genVegi() {
-        //  return new Dish("grape", true, 20, Type.OTHER);
-        //}
+        @Bean(name = "vegiBean")
+        public Dish genVegi() {
+          return new Dish("grape", true, 20, Type.OTHER);
+        }
+
+ 	@Bean(name = "meatBean")
+  	public Dish genMeat() {
+      	  return new Dish();
+  	}
 	
 	@Override
 	public String toString() {
 		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
 				+ ", calories=" + calories + ", type=" + type + "]";
 	}
+
+   
+
+
  
 
 }

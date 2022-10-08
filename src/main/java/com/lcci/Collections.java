@@ -30,15 +30,14 @@ public class Collections {
 
    System.err.println("Collections testing");
 
-   Dish dish = appContext.getBean("meat", Dish.class);
+   Dish dish = appContext.getBean("meatBean", Dish.class);
    System.err.println(dish.toString());
 
    Info info = appContext.getBean(Info.class);
    System.err.println(info.toString());
 
-   Dish vegiDish = (Dish)appContext.getBean("vegi");
+   Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
    System.err.println(vegiDish.toString());
-
 
 
    List<String> dataList = new ArrayList<String>();
@@ -60,17 +59,6 @@ public class Collections {
    dataList.forEach(printer);
 
   }
-
-  @Bean(name = "vegi")
-  public Dish genVegi() {
-    return new Dish("grape", true, 20, Dish.Type.OTHER);
-  }
-
-  @Bean(name = "meat")
-  public Dish genMeat() {
-    return new Dish();
-  }
-
 
 
 }
