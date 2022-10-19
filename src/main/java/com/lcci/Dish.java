@@ -18,6 +18,9 @@ public class Dish {
 	private final int calories;
 	private final Type type;
 
+        @Autowired
+        Message firstMessage;
+
 	public Dish() {	
 		this.name = "food";
 		this.vegetarian = false;
@@ -59,11 +62,21 @@ public class Dish {
   	public Dish meatBean() {
       	  return new Dish();
   	}
-	
+
+        // example found by looking at getBean Spring doc directly not a video 
+        //
+        @Bean(name = "food") 
+        @Scope(value  = "prototype")
+        public Dish specialMeatDish(String meatName) {
+          return new Dish(meatName, false, 100, Type.MEAT);
+        }
+
+
+
 	@Override
 	public String toString() {
 		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
-				+ ", calories=" + calories + ", type=" + type + "]";
+				+ ", calories=" + calories + ", type=" + type + "] with message:"+firstMessage.toString();
 	}
 
 

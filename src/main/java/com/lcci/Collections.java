@@ -39,6 +39,10 @@ public class Collections {
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
    System.err.println(vegiDish.toString());
 
+   Dish glenDish = (Dish)appContext.getBean("food", "glen");  // Casting needed
+   System.err.println(glenDish.toString());
+   
+
    //System.err.println("all beans");
    //System.err.println(Arrays.asList(appContext.getBeanDefinitionNames()));
 
