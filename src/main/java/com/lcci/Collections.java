@@ -39,6 +39,8 @@ public class Collections {
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
    System.err.println(vegiDish.toString());
 
+   //System.err.println("all beans");
+   //System.err.println(Arrays.asList(appContext.getBeanDefinitionNames()));
 
    List<String> dataList = new ArrayList<String>();
 

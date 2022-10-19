@@ -1,13 +1,15 @@
 package com.lcci;
 
-import org.springframework.stereotype.*;
+
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 
-@Component
+@Configuration
 public class Dish {
 	public enum Type { MEAT, FISH, OTHER }
 
@@ -16,7 +18,6 @@ public class Dish {
 	private final int calories;
 	private final Type type;
 
-        //used by spring boot
 	public Dish() {	
 		this.name = "food";
 		this.vegetarian = false;
@@ -38,17 +39,24 @@ public class Dish {
 	public Type getType() {return type;}
 
         @Bean
+        @Scope("prototype")
         public Info genInfo() {
           return new Info();
         }
 
-        @Bean(name = "vegiBean")
-        public Dish genVegi() {
+        //@Bean(name = "vegiBean")
+        //or
+        // auto mapped to name of bean by default
+        @Bean
+        public Dish vegiBean() {
           return new Dish("grape", true, 20, Type.OTHER);
         }
 
- 	@Bean(name = "meatBean")
-  	public Dish genMeat() {
+ 	//@Bean(name = "meatBean")
+ 	// or
+ 	// auto mapped to name of bean by default
+ 	@Bean
+  	public Dish meatBean() {
       	  return new Dish();
   	}
 	
@@ -58,9 +66,5 @@ public class Dish {
 				+ ", calories=" + calories + ", type=" + type + "]";
 	}
 
-   
-
-
- 
 
 }
