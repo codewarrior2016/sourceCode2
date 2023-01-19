@@ -15,6 +15,8 @@ import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.*;
+import org.springframework.boot.web.servlet.context.*;
 
 import org.springframework.context.ApplicationContext;
 
@@ -63,6 +65,12 @@ public class Collections {
    Consumer<String> printer= s ->  System.out.println(s);
 
    dataList.forEach(printer);
+
+   System.err.println(appContext.toString());
+
+   //AnnotationConfigServletWebServerApplicationContext acswsaContext = (AnnotationConfigServletWebServerApplicationContext)appContext;
+   //acswsaContext.close();
+
 
   }
 
