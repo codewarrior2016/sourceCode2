@@ -68,8 +68,10 @@ public class Collections {
 
    System.err.println(appContext.toString());
 
-   //AnnotationConfigServletWebServerApplicationContext acswsaContext = (AnnotationConfigServletWebServerApplicationContext)appContext;
-   //acswsaContext.close();
+
+   // needed to exit the program, stopping service [TOMCAT]
+   AnnotationConfigServletWebServerApplicationContext acswsaContext = (AnnotationConfigServletWebServerApplicationContext)appContext;
+   acswsaContext.close();
 
 
   }
