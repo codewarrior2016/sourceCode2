@@ -3,11 +3,14 @@ package com.lcci;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+//import org.springframework.context.annotation.Component;
 import org.springframework.context.annotation.Scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+
+
 
 @Configuration
 public class Dish {
@@ -41,8 +44,15 @@ public class Dish {
 	public int getCalories() {return calories;}
 	public Type getType() {return type;}
 
+
+	// NOTE!!!!
+	// default is singleton IF you use @Configuration on the bean
+	// thus prototype is needed if you want one per call to getBean
+        //
+        // @Bean
+        // @Scope("prototype")
+        //
         @Bean
-        @Scope("prototype")
         public Info genInfo() {
           return new Info();
         }

@@ -9,6 +9,10 @@ public class Info {
     this.message= "Default message";
   }
 
+  public void setMessage(String message) {
+    this.message= message;
+  }
+
   public String toString() {
     return "value of message: "+this.message;
   }

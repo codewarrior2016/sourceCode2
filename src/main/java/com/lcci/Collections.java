@@ -35,8 +35,13 @@ public class Collections {
    Dish dish = appContext.getBean("meatBean", Dish.class);
    System.err.println(dish.toString());
 
-   Info info = appContext.getBean(Info.class);
-   System.err.println(info.toString());
+   Info info1 = appContext.getBean(Info.class);
+   info1.setMessage("updated message");
+   System.err.println("info1 data: " + info1);
+
+   Info info2 = appContext.getBean(Info.class);
+   System.err.println("info2 data: " + info2);
+
 
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
    System.err.println(vegiDish.toString());
