@@ -73,7 +73,8 @@ public class Dish {
  	//@Bean(name = "meatBean")
  	// or
  	// auto mapped to name of bean by default
- 	@Bean
+ 	@Bean(initMethod = "populateCache")
+        @Scope("prototype")
   	public Dish meatBean() {
       	  return new Dish();
   	}
@@ -86,6 +87,10 @@ public class Dish {
           return new Dish(meatName, false, 100, Type.MEAT);
         }
 
+        // called after init on static OR on after EACH dynamic init
+        public void populateCache() {
+          System.err.println("POPULATE cache");
+        }
 
 	@Override
 	public String toString() {

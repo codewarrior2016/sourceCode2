@@ -32,8 +32,11 @@ public class Collections {
 
    System.err.println("Collections testing");
 
-   Dish dish = appContext.getBean("meatBean", Dish.class);
-   System.err.println(dish.toString());
+   Dish meatDish = appContext.getBean("meatBean", Dish.class);
+   System.err.println(meatDish.toString());
+
+   Dish meatDish2 = appContext.getBean("meatBean", Dish.class);
+   System.err.println(meatDish2.toString());
 
    Info info1 = appContext.getBean(Info.class);
    info1.setMessage("updated message");
