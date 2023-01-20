@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 // different possible values
 // @Configuration
 // @Component
-@Component
+@Configuration
 public class Dish {
 	public enum Type { MEAT, FISH, OTHER }
 
@@ -52,12 +52,12 @@ public class Dish {
 	// NOTE!!!!
 	// default is singleton IF you use @Configuration on the bean
 	// thus prototype is needed if you want one per call to getBean
+	// default is singleton when using @Component also
         //
         // @Bean
         // @Scope("prototype")
         //
         @Bean
-        @Scope("prototype")
         public Info genInfo() {
           return new Info();
         }
@@ -87,12 +87,10 @@ public class Dish {
         }
 
 
-
 	@Override
 	public String toString() {
 		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
 				+ ", calories=" + calories + ", type=" + type + "] with message:"+firstMessage.toString();
 	}
-
 
 }
