@@ -3,8 +3,9 @@ package com.lcci;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.context.annotation.Component;
 import org.springframework.context.annotation.Scope;
+
+import org.springframework.stereotype.Component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,7 +13,10 @@ import org.springframework.beans.factory.annotation.Value;
 
 
 
-@Configuration
+// different possible values
+// @Configuration
+// @Component
+@Component
 public class Dish {
 	public enum Type { MEAT, FISH, OTHER }
 
@@ -53,6 +57,7 @@ public class Dish {
         // @Scope("prototype")
         //
         @Bean
+        @Scope("prototype")
         public Info genInfo() {
           return new Info();
         }
