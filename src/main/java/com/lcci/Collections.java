@@ -38,12 +38,15 @@ public class Collections {
    Dish meatDish2 = appContext.getBean("meatBean", Dish.class);
    System.err.println(meatDish2.toString());
 
-   Info info1 = appContext.getBean(Info.class);
+   Info info1 = appContext.getBean(Info.class); // ref by class
    info1.setMessage("updated message");
    System.err.println("info1 data: " + info1);
 
    Info info2 = appContext.getBean(Info.class);
-   System.err.println("info2 data: " + info2);
+   System.err.println("info2 data: " + info2); // will show update from above if singleton is mode
+
+   Info info3 = appContext.getBean("genInfo",Info.class); // ref by name
+   System.err.println("info3 data: " + info2);
 
 
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);

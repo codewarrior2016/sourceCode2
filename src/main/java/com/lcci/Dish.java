@@ -50,7 +50,7 @@ public class Dish {
 
 
 	// NOTE!!!!
-	// default is singleton IF you use @Configuration on the bean
+	// DEFAULT is singleton IF you use @Configuration on the bean
 	// thus prototype is needed if you want one per call to getBean
 	// default is singleton when using @Component also
         //
@@ -58,13 +58,14 @@ public class Dish {
         // @Scope("prototype")
         //
         @Bean
+	@Scope("prototype")
         public Info genInfo() {
           return new Info();
         }
 
         //@Bean(name = "vegiBean")
         //or
-        // auto mapped to name of bean by default
+        // auto mapped to name of method by default
         @Bean
         public Dish vegiBean() {
           return new Dish("grape", true, 20, Type.OTHER);
