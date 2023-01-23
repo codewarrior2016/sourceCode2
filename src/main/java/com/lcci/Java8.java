@@ -23,9 +23,9 @@ public class Java8 {
 		System.err.println("");
 
 		List<Dish> menu = Arrays.asList(
-				new Dish("pork", false, 800, Dish.Type.MEAT),
 				new Dish("beef", false, 700, Dish.Type.MEAT),
 				new Dish("chicken", false, 400, Dish.Type.MEAT),
+				new Dish("pork", false, 800, Dish.Type.MEAT),
 				new Dish("french fries", true, 530, Dish.Type.OTHER),
 				new Dish("rice", true, 350, Dish.Type.OTHER),
 				new Dish("season fruit", true, 120, Dish.Type.OTHER),
@@ -53,7 +53,8 @@ public class Java8 {
 		System.out.println("-----A");
 		Dish greatest = menu.stream()
 				      .reduce(menu.get(0), (a, b)-> (a.getCalories() > b.getCalories() ? a : b));
-		
+	        
+  		System.out.println("greatest is :"+greatest);	
 		Optional<Dish> greatest2 = menu.stream()
 			      .reduce((a, b)-> (a.getCalories() > b.getCalories() ? a : b));
 
