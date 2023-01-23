@@ -55,7 +55,11 @@ public class Collections {
    System.err.println("info2 data: " + info2); // will show update from above if singleton is mode
 
    Info info3 = appContext.getBean("genInfo",Info.class); // ref by name
-   System.err.println("info3 data: " + info2);
+   info3.setMessage("updated message2");
+   System.err.println("info3 data: " + info3);
+
+   Info info4 = (Info)appContext.getBean("genInfo"); // ref by name, but NO class type, so cast needed
+   System.err.println("info4 data: " + info4);
 
 
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
@@ -63,7 +67,6 @@ public class Collections {
 
    Dish glenDish = (Dish)appContext.getBean("food", "glenMeat");  // Casting needed, contructor arg used
    System.err.println(glenDish.toString());
-   
 
    //System.err.println("all beans");
    //System.err.println(Arrays.asList(appContext.getBeanDefinitionNames()));
