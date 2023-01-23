@@ -107,7 +107,7 @@ public class Dish {
 	@Override
 	public String toString() {
 		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
-				+ ", calories=" + calories + ", type=" + type + "] with message:"+firstMessage.toString();
+				+ ", calories=" + calories + ", type=" + type + "] with message:"+firstMessage;
 	}
 
 }
