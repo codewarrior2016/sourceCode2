@@ -10,6 +10,15 @@ import java.util.function.Consumer;
 //
 //
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import org.springframework.stereotype.Component;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+
 
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
@@ -52,7 +61,7 @@ public class Collections {
    Dish vegiDish = appContext.getBean("vegiBean", Dish.class);
    System.err.println(vegiDish.toString());
 
-   Dish glenDish = (Dish)appContext.getBean("food", "glen");  // Casting needed
+   Dish glenDish = (Dish)appContext.getBean("food", "glenMeat");  // Casting needed, contructor arg used
    System.err.println(glenDish.toString());
    
 
@@ -77,13 +86,15 @@ public class Collections {
 
    dataList.forEach(printer);
 
-   System.err.println(appContext.toString());
+   System.err.println(appContext.toString()+"\n");
+
+   Message message1 = (Message)appContext.getBean(Message.class);
+   System.err.println(message1);
 
 
    // needed to exit the program, stopping service [TOMCAT]
    AnnotationConfigServletWebServerApplicationContext acswsaContext = (AnnotationConfigServletWebServerApplicationContext)appContext;
    acswsaContext.close();
-
 
   }
 

@@ -19,9 +19,7 @@ public class Message {
 
 
    public String toString() {
-     return ("Data is :"+message);
+     return (message);
    }
 
-
 }
-

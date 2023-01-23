@@ -36,6 +36,17 @@ public class Dish {
 	}
 
 
+        //
+        // Can NOT just put bean here
+        // @Bean will not compile
+	public Dish(String name) {	
+		this.name = name;
+		// defaults
+		this.vegetarian = false;
+		this.calories = 500;
+		this.type = Type.MEAT;
+        }
+
 	public Dish(String name, boolean vegetarian, int calories, Type type) {	
 		this.name = name;
 		this.vegetarian = vegetarian;
