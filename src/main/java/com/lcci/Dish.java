@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Value;
 // different possible values
 // @Configuration
 // @Component
-@Configuration
 public class Dish {
 	public enum Type { MEAT, FISH, OTHER }
 
@@ -36,9 +35,6 @@ public class Dish {
 	}
 
 
-        //
-        // Can NOT just put bean here
-        // @Bean will not compile
 	public Dish(String name) {	
 		this.name = name;
 		// defaults
@@ -59,45 +55,6 @@ public class Dish {
 	public int getCalories() {return calories;}
 	public Type getType() {return type;}
 
-
-	// NOTE!!!!
-	// DEFAULT is singleton IF you use @Configuration on the bean
-	// thus prototype is needed if you want one per call to getBean
-	// default is singleton when using @Component also
-        //
-        // @Bean
-        // @Scope("prototype")
-        //
-        @Bean
-	@Scope("prototype")
-        public Info genInfo() {
-          return new Info();
-        }
-
-        //@Bean(name = "vegiBean")
-        //or
-        // auto mapped to name of method by default
-        @Bean
-        public Dish vegiBean() {
-          return new Dish("grape", true, 20, Type.OTHER);
-        }
-
- 	//@Bean(name = "meatBean")
- 	// or
- 	// auto mapped to name of bean by default
- 	@Bean(initMethod = "populateCache")
-        @Scope("prototype")
-  	public Dish meatBean() {
-      	  return new Dish();
-  	}
-
-        // example found by looking at getBean Spring doc directly not a video 
-        //
-        @Bean(name = "food") 
-        @Scope(value  = "prototype")
-        public Dish specialMeatDish(String meatName) {
-          return new Dish(meatName, false, 100, Type.MEAT);
-        }
 
         // called after init on static OR on after EACH dynamic init
         public void populateCache() {

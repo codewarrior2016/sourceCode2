@@ -32,13 +32,9 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class Collections {
 
-// @Autowired
-//  Dish dish;
 
   public static void main(String[] args) {
-
    ApplicationContext appContext = SpringApplication.run(Collections.class, args);
-
    System.err.println("Collections testing");
 
    Dish meatDish = appContext.getBean("meatBean", Dish.class);
@@ -103,4 +99,3 @@ public class Collections {
 
 
 }
-
