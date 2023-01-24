@@ -51,6 +51,7 @@ public class Java8 {
 		if (heavyDishes instanceof java.util.LinkedList) { System.err.println("is linked List"); }
 		
 		System.out.println("-----A");
+		// default specified
 		Dish greatest = menu.stream()
 				      .reduce(menu.get(0), (a, b)-> (a.getCalories() > b.getCalories() ? a : b));
 	        
