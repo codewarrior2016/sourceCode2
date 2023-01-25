@@ -29,11 +29,18 @@ public class Dish {
         @Autowired
         Message firstMessage;
 
+        Message secondMessage;
+
 	public Dish() {	
 		this.name = "food";
 		this.vegetarian = false;
 		this.calories = 500;
 		this.type = Type.MEAT;
+	}
+
+	public Dish(Message secondMessage) {	
+		this();
+		this.secondMessage = secondMessage;
 	}
 
 
@@ -65,8 +72,13 @@ public class Dish {
 
 	@Override
 	public String toString() {
+    /*
 		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
-				+ ", calories=" + calories + ", type=" + type + "] with message:"+firstMessage;
+				+ ", calories=" + calories + ", type=" + type + "] with firstMessage:"+firstMessage 
+                                + ", second message: "+secondMessage;
+    */
+		return "Dish was [name=" + name + ", vegetarian=" + vegetarian
+				+ ", calories=" + calories + ", type=" + type + ", firstMessage=" + firstMessage + ", secondMessage=" + secondMessage +"]"; 
 	}
 
 }

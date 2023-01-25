@@ -59,6 +59,12 @@ public class BeanFactory{
           return new Dish(meatName, false, 100, Dish.Type.MEAT);
         }
 
+        @Bean(name = "dishWithTwoMessages")
+	@Scope("prototype")
+        public Dish dishWithSecondMessage() {
+	  return new Dish(new Message("data for second message"));
+        }
+
         // called after init on static OR on after EACH dynamic init
         public void populateCache() {
           System.err.println("POPULATE cache");

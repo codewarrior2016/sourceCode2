@@ -64,7 +64,10 @@ public class Collections {
    System.err.println(vegiDish.toString());
 
    Dish glenDish = (Dish)appContext.getBean("food", "glenMeat");  // Casting needed, contructor arg used
-   System.err.println(glenDish.toString());
+   System.err.println(glenDish.toString()+"\n");
+
+   Dish twoMsgDish = appContext.getBean("dishWithTwoMessages", Dish.class);
+   System.err.println("Two message Dish:"+twoMsgDish);
 
    //System.err.println("all beans");
    //System.err.println(Arrays.asList(appContext.getBeanDefinitionNames()));
