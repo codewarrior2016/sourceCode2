@@ -29,6 +29,8 @@ import org.springframework.boot.web.servlet.context.*;
 
 import org.springframework.context.ApplicationContext;
 
+// Note can use @PropertySource("classpath:filename.properties") to load properties you can ref via @Value("${sfasf}")
+
 @SpringBootApplication
 public class Collections {
 
@@ -89,6 +91,9 @@ public class Collections {
 
    Message message1 = (Message)appContext.getBean(Message.class);
    System.err.println(message1);
+
+   Message message2 = (Message)appContext.getBean("message"); // notice default with lower m
+   System.err.println(message2);
 
 
    // needed to exit the program, stopping service [TOMCAT]

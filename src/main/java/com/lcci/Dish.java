@@ -24,6 +24,8 @@ public class Dish {
 	private final int calories;
 	private final Type type;
 
+
+	// NOTE can also put autowired on setFirstMessage Setter method
         @Autowired
         Message firstMessage;
 

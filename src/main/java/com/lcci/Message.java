@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.context.annotation.Bean;
 
 
-
+// can use Component("name") default is LOWER message not Message if name no set
 @Component
 public class Message {
 
